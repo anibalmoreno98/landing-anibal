@@ -1,11 +1,54 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Aníbal - Programador">
+  <main>
+	<section class="hero">
+		<h1>Hola, soy Aníbal</h1>
+		<p>Programador backend & full‑stack especializado en Java, Spring Boot y bases de datos reales.</p>
+		<a href="#proyectos" class="btn">Ver mis proyectos</a>
+	</section>
+
+	<section id="sobre-mi">
+		<h2>Sobre mí</h2>
+		<p>
+			Soy un desarrollador orientado a soluciones limpias, minimalistas y defendibles. Me especializo en backend con Java, Spring Boot, bases de datos reales como PostgreSQL y SQLite, y en crear aplicaciones prácticas que resuelven problemas reales.  
+			Me gusta trabajar con arquitectura clara, documentación sólida y código fácil de mantener.
+		</p>
+	</section>
+
+	<section id="proyectos">
+		<h2>Proyectos</h2>
+
+		<ProjectCard
+			title="Analizador de Archivos en Java"
+			date="Octubre 2024"
+			description="Aplicación JavaFX que procesa archivos y genera estadísticas."
+			github="https://github.com/anibalmoreno98/"
+			demo="https://youtu.be/tuvideo1"
+		/>
+
+		<ProjectCard
+			title="API REST de Gestión de Tareas"
+			date="Enero 2025"
+			description="API con Spring Boot, PostgreSQL y validaciones."
+			github="https://github.com/anibalmoreno98/"
+			demo="https://youtu.be/tuvideo2"
+		/>
+	</section>
+
+	<section id="contacto">
+		<h2>Contacto</h2>
+		<p>Puedes escribirme para colaboraciones, proyectos o entrevistas.</p>
+		<p>Email: <a href="mailto:anibalmoreno98@gmail.com">anibalmoreno98@gmail.com</a></p>
+		<p>GitHub: <a href="https://github.com/anibalmoreno98" target="_blank">github.com/anibalmoreno98</a></p>
+		<p>LinkedIn: <a href="#" target="_blank">Tu LinkedIn aquí</a></p>
+	</section>
+
+	<footer>
+	© {new Date().getFullYear()} Aníbal Moreno — Todos los derechos reservados
+	</footer>
+  </main>
 </Layout>

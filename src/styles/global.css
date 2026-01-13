@@ -1,0 +1,216 @@
+/* -----------------------------------
+   PALETA DE COLORES
+----------------------------------- */
+:root {
+  --white: #ffffff;
+  --silver-light: #f2f2f2;
+  --silver: #d9d9d9;
+  --silver-dark: #bfbfbf;
+
+  --blue: #0066cc;
+  --blue-dark: #004c99;
+
+  --red: #cc0000;
+
+  --text-dark: #1a1a1a;
+  --text-light: #555;
+}
+
+/* -----------------------------------
+   BASE GLOBAL
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: var(--silver-dark);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 0.92rem; /* letras más pequeñas y elegantes */
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+/* -----------------------------------
+   HERO
+----------------------------------- */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem 1rem;
+  background: var(--white);
+  border-radius: 16px;
+  margin-top: 2rem;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1.8rem;
+}
+
+/* Botón principal */
+.hero .btn {
+  background: var(--blue);
+  padding: 0.8rem 1.4rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.hero .btn:hover {
+  background: var(--blue-dark);
+}
+
+/* -----------------------------------
+   SOBRE MÍ
+----------------------------------- */
+#sobre-mi {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--silver-light);
+  border-radius: 16px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+#sobre-mi h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--blue-dark);
+}
+
+#sobre-mi p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* -----------------------------------
+   PROYECTOS
+----------------------------------- */
+#proyectos {
+  margin-top: 3rem;
+}
+
+#proyectos h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--blue-dark);
+}
+
+/* -----------------------------------
+   TARJETAS DE PROYECTO
+----------------------------------- */
+.project-card {
+  background: var(--silver-light);
+  padding: 1.8rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+
+  border-left: 6px solid var(--red);
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER: más gris + sombra más profunda */
+.project-card:hover {
+    background: var(--silver);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-card .date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  margin-bottom: 1.2rem;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.project-card .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons a {
+  background: var(--blue);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.buttons a:hover {
+  background: var(--blue-dark);
+}
+
+/* -----------------------------------
+   CONTACTO
+----------------------------------- */
+#contacto {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--silver-light);
+  border-radius: 16px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+#contacto h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--blue-dark);
+}
+
+#contacto p {
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+}
+
+#contacto a {
+  color: var(--red);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
