@@ -1,0 +1,43 @@
+---
+import gsap from "gsap";
+
+const { text, className = "" } = Astro.props;
+---
+
+<h1 class={`fuzzy-text ${className}`}>{text}</h1>
+
+<style>
+.fuzzy-text {
+  display: inline-block;
+  filter: blur(8px);
+  opacity: 0;
+}
+</style>
+
+<script>
+import gsap from "gsap";
+
+const el = document.querySelector(".fuzzy-text");
+
+// Animación de entrada
+gsap.to(el, {
+  opacity: 1,
+  filter: "blur(0px)",
+  duration: 1.2,
+  ease: "power3.out"
+});
+
+// Vibración continua estilo ReactBits
+gsap.to(el, {
+  keyframes: [
+    { filter: "blur(1px)", duration: 0.2 },
+    { filter: "blur(0px)", duration: 0.2 },
+    { filter: "blur(2px)", duration: 0.2 },
+    { filter: "blur(0px)", duration: 0.2 }
+  ],
+  repeat: -1,
+  ease: "none",
+  delay: 1.2
+});
+</script>
+
