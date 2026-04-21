@@ -11,8 +11,8 @@ const { title, date, description, github, demo } = Astro.props;
     <p>{description}</p>
 
     <div class="buttons">
-      <a href={github} target="_blank">GitHub</a>
-      <a href={demo} target="_blank">Ver demo</a>
+      {github && <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>}
+      {demo && <a href={demo} target="_blank" rel="noopener noreferrer">Ver demo</a>}
     </div>
   </div>
 </div>
@@ -21,13 +21,12 @@ const { title, date, description, github, demo } = Astro.props;
 .card-3d {
   position: relative;
   padding: 2rem;
-  border-radius: 18px;
-  background: radial-gradient(circle at top left, #20253a, #0c0f1a);
-  border: 1px solid rgba(120, 180, 255, 0.25);
-  box-shadow:
-    0 0 0 1px rgba(0, 80, 200, 0.35),
-    0 18px 45px rgba(0, 0, 0, 0.7);
-  transform-style: preserve-3d;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #f0f1f3;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(37, 99, 235, 0.08);
   overflow: hidden;
   cursor: pointer;
   transition:
@@ -36,15 +35,13 @@ const { title, date, description, github, demo } = Astro.props;
     border-color .18s ease-out;
 }
 
-/* Glow general */
+/* Glow general - removido */
 .card-3d::before {
   content: "";
   position: absolute;
   inset: -40%;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(0, 150, 255, 0.25), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(150, 50, 255, 0.25), transparent 55%);
-  opacity: 0.4;
+  background: none;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -54,10 +51,10 @@ const { title, date, description, github, demo } = Astro.props;
   inset: 0;
   background: radial-gradient(
     circle at var(--mx) var(--my),
-    rgba(0, 200, 255, 0.35),
+    rgba(37, 99, 235, 0.06),
     transparent 60%
   );
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
   opacity: 0;
   transition: opacity .18s ease-out;
   pointer-events: none;
@@ -70,21 +67,25 @@ const { title, date, description, github, demo } = Astro.props;
 }
 
 .card-3d h3 {
-  color: #f5f7ff;
+  color: #0f172a;
   font-size: 1.3rem;
   margin-bottom: 0.4rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .card-3d .date {
-  color: #9aa3c2;
+  color: #94a3b8;
   font-size: 0.8rem;
   margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .card-3d p {
-  color: #d5daee;
+  color: #475569;
   margin-bottom: 1.2rem;
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Botones */
@@ -94,29 +95,31 @@ const { title, date, description, github, demo } = Astro.props;
 }
 
 .buttons a {
-  background: linear-gradient(135deg, #0f7bff, #7b3dff);
+  background: #3b82f6;
   color: white;
   padding: 0.6rem 1.2rem;
-  border-radius: 999px;
+  border-radius: 8px;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
-  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  box-shadow: 0 8px 20px rgba(0, 120, 255, 0.4);
+  transition: all .15s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+  border: 1px solid #3b82f6;
 }
 
 .buttons a:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0, 120, 255, 0.6);
-  filter: brightness(1.05);
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
 }
 
 /* Hover global */
 .card-3d:hover {
-  box-shadow:
-    0 0 0 1px rgba(0, 180, 255, 0.6),
-    0 22px 55px rgba(0, 0, 0, 0.85);
-  border-color: rgba(160, 210, 255, 0.8);
+  border-color: #e5e7eb;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(37, 99, 235, 0.12);
+  transform: translateY(-3px);
 }
 
 .card-3d:hover .spotlight {
